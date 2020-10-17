@@ -1,0 +1,8 @@
+EXERCICIS
+
+4.a	Les dades s'han d'importar en el següent ordre: 1er.USAirports o Carriers, 2on.Carriers o USAirports, 3er.Flights. Això és així ja que la taula Flights té claus externes referenciades a les altres dues taules.
+
+4.b	No estan ben correlacionats a partir de la columna CarrierDelay degut a que aquestes columnes no existeixen a l'estructura de la table Flights. Hem de treure la selecció d'aquests camps perquè no sobreescriguin la informació d'altres columnes.
+
+
+
