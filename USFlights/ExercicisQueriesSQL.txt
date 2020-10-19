@@ -5,6 +5,8 @@ EXERCICIS
 4.b	No estan ben correlacionats a partir de la columna CarrierDelay degut a que aquestes columnes no existeixen a l'estructura de la table Flights. Hem de treure la selecció d'aquests camps perquè no sobreescriguin la informació d'altres columnes.
 
 
+Les consultes SQL s'indiquen a continuació i també s'inclouen en l'arxiu .sql "QueriesSQL"
+
 Consultes SQL
 -------------
 
