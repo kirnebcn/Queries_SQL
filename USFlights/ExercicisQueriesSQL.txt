@@ -5,4 +5,47 @@ EXERCICIS
 4.b	No estan ben correlacionats a partir de la columna CarrierDelay degut a que aquestes columnes no existeixen a l'estructura de la table Flights. Hem de treure la selecció d'aquests camps perquè no sobreescriguin la informació d'altres columnes.
 
 
+Consultes SQL
+-------------
+
+1.
+USE usairlineflights2;
+SELECT COUNT(flightID) AS total FROM flights;
+
+2.
+USE usairlineflights2;
+SELECT Origin, AVG(ArrDelay) AS prom_arribades, AVG(DepDelay) AS prom_sortides FROM flights
+GROUP BY Origin;
+
+3.
+USE usairlineflights2;
+SELECT Origin, colYear, colMonth, ArrDelay AS prom_arribades FROM flights
+ORDER BY Origin, colYear, colMonth;
+
+4.
+USE usairlineflights2;
+SELECT City, colYear, colMonth, ArrDelay AS prom_arribades FROM flights
+INNER JOIN usairports
+	ON Origin = IATA
+ORDER BY Origin, colYear, colMonth;
+
+5.
+USE usairlineflights2;
+SELECT UniqueCarrier, colYear, colMonth, SUM(Cancelled) AS total_cancelled FROM flights
+GROUP BY UniqueCarrier,colYear,colMonth
+ORDER BY total_cancelled DESC;
+
+6.
+USE usairlineflights2;
+SELECT TailNum, SUM(Distance) AS totalDistance FROM flights
+GROUP BY TailNum
+HAVING TailNum !=''
+ORDER BY totalDistance DESC;
+
+7.
+USE usairlineflights2;
+SELECT UniqueCarrier, AVG(ArrDelay) AS avgDelay FROM flights
+GROUP BY UniqueCarrier
+HAVING avgDelay > 10
+ORDER BY avgDelay DESC;
 
